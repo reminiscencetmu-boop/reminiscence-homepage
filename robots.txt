@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://reminiscencetmu-boop.github.io/reminiscence-homepage/sitemap.xml
