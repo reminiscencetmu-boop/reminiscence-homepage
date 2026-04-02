@@ -6,6 +6,724 @@
     <title>回憶促進計劃 | 成為可以一起變老的朋友</title>
     <meta name="description" content="回憶促進計劃結合臺北醫學大學與SUSS，透過回憶引導增加長者互動、提升情緒與認知，打造青銀共融的社區新力量。">
     <meta name="keywords" content="回憶促進計劃, 長者照護, 臺北醫學大學, 信義展齡中心, SUSS, 嶺南大學, 星展銀行, 青銀共融, 社區據點">
+    <!-- SEO: 標準網址 -->
+    <link rel="canonical" href="https://reminiscencetmu-boop.github.io/reminiscence-homepage/">
+
+    <!-- SEO: Open Graph -->
+    <meta property="og:type"        content="website">
+    <meta property="og:locale"      content="zh_TW">
+    <meta property="og:url"         content="https://reminiscencetmu-boop.github.io/reminiscence-homepage/">
+    <meta property="og:title"       content="回憶促進計劃 | 成為可以一起變老的朋友">
+    <meta property="og:description" content="台灣首個大學主導的社區回憶促進計劃，結合臺北醫學大學、SUSS 與嶺南大學，透過科學實證回憶引導方法，提升長者認知與情緒，打造青銀共融社區。">
+    <meta property="og:site_name"   content="回憶促進計劃">
+
+    <!-- SEO: Twitter Card -->
+    <meta name="twitter:card"        content="summary_large_image">
+    <meta name="twitter:title"       content="回憶促進計劃 | 成為可以一起變老的朋友">
+    <meta name="twitter:description" content="台灣首個大學主導的社區回憶促進計劃，透過科學實證方法提升長者認知與情緒，打造青銀共融友善社區。">
+
+    <!-- SEO: robots -->
+    <meta name="robots" content="index, follow">
+    <meta name="geo.region" content="TW">
+    <meta name="geo.placename" content="台北">
+
+    <!-- SEO: Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "回憶促進計劃",
+      "alternateName": "Reminiscence Promotion Project",
+      "url": "https://reminiscencetmu-boop.github.io/reminiscence-homepage/",
+      "description": "台灣首個大學主導的社區回憶促進計劃，結合臺北醫學大學、SUSS 與嶺南大學，透過科學實證的回憶引導方法，提升長者認知與情緒，打造青銀共融友善社區。",
+      "contactPoint": {"@type":"ContactPoint","telephone":"+886-2-2736-1661","contactType":"customer service","areaServed":"TW","availableLanguage":"Chinese"},
+      "sameAs": ["https://www.facebook.com/tmuaac","https://youtube.com/@tmu_rf"]
+    }
+    </script>
+    
+    <!-- 引入 Google Fonts: Noto Sans TC 增加質感 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+    <!-- 引入 Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- 引入 FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- 自訂設定與平滑滾動：強烈藍紅白對比設計 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans TC"', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#002060', // 深藍色 (主視覺)
+                        secondary: '#E31837', // 亮紅色 (強調色)
+                        accent: '#F4F5F7', // 淺灰白 (背景交替)
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px; 
+        }
+        /* 確保多媒體容器完美響應且不會消失 */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 比例 */
+            height: 0;
+            overflow: hidden;
+            background-color: #000;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        /* 時間軸樣式 */
+        .timeline-dot {
+            position: absolute;
+            left: -0.4rem;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            background-color: #E31837; /* secondary red */
+            border: 3px solid #fff;
+            box-shadow: 0 0 0 3px #002060; /* primary blue */
+        }
+        .timeline-line {
+            position: absolute;
+            left: 0;
+            top: 1rem;
+            bottom: -1rem;
+            width: 0.2rem;
+            background-color: #002060; /* primary blue */
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800 font-sans antialiased">
+
+    <!-- 導覽列 -->
+    <nav class="fixed w-full bg-white shadow-md z-50 transition-all duration-300 border-b-4 border-primary">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <a href="#" class="flex items-center gap-2">
+                        <i class="fa-solid fa-people-group text-secondary text-3xl"></i>
+                        <span class="font-bold text-2xl text-primary tracking-wider">回憶促進計劃</span>
+                    </a>
+                </div>
+                <!-- 電腦版選單 -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#about" class="text-primary hover:text-secondary font-bold transition">關於計劃</a>
+                    <a href="#target" class="text-primary hover:text-secondary font-bold transition">服務對象</a>
+                    <a href="#team" class="text-primary hover:text-secondary font-bold transition">友善團隊</a>
+                    <a href="#milestones" class="text-primary hover:text-secondary font-bold transition">重要里程碑</a>
+                    <a href="#training" class="text-primary hover:text-secondary font-bold transition">專業培訓</a>
+                    <a href="#results" class="text-primary hover:text-secondary font-bold transition">活動成果</a>
+                    <a href="#contact" class="bg-secondary text-white px-6 py-2 rounded-full font-bold hover:bg-red-700 transition shadow-md">聯絡我們</a>
+                </div>
+                <!-- 手機版選單按鈕 -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-primary hover:text-secondary focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- 手機版選單內容 -->
+        <div id="mobile-menu" class="hidden md:hidden bg-primary border-t border-blue-800">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-center">
+                <a href="#about" class="block px-3 py-3 text-white hover:text-secondary font-bold">關於計劃</a>
+                <a href="#target" class="block px-3 py-3 text-white hover:text-secondary font-bold">服務對象</a>
+                <a href="#team" class="block px-3 py-3 text-white hover:text-secondary font-bold">友善團隊</a>
+                <a href="#milestones" class="block px-3 py-3 text-white hover:text-secondary font-bold">重要里程碑</a>
+                <a href="#training" class="block px-3 py-3 text-white hover:text-secondary font-bold">專業培訓</a>
+                <a href="#results" class="block px-3 py-3 text-white hover:text-secondary font-bold">活動成果</a>
+                <a href="#contact" class="block px-3 py-3 text-secondary font-bold bg-white mx-4 rounded-md">聯絡我們</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主視覺區塊 (Hero Section) -->
+    <header class="pt-32 pb-24 bg-primary text-white relative overflow-hidden">
+        <!-- 裝飾幾何圖形 -->
+        <div class="absolute top-0 right-0 -mt-20 -mr-20 w-96 h-96 bg-secondary rounded-full opacity-20 blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 -mb-20 -ml-20 w-80 h-80 bg-white rounded-full opacity-10 blur-3xl"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <h1 class="text-4xl md:text-5xl lg:text-7xl font-black mb-6 leading-tight tracking-wide">
+                成為可以<span class="text-secondary">一起變老</span>的朋友
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-200 mb-10 max-w-3xl mx-auto font-medium">
+                讓長輩不只是被照顧者，也可以是照顧者。<br class="hidden md:block">
+                透過回憶促進，我們連結當下，提升心理生活，建立青銀共融的友善社區。
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#about" class="bg-secondary hover:bg-red-700 text-white font-bold py-4 px-10 rounded-full shadow-lg transition transform hover:-translate-y-1 text-lg">了解更多</a>
+                <a href="#contact" class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary font-bold py-4 px-10 rounded-full shadow transition transform hover:-translate-y-1 text-lg">加入我們</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 關於【回憶促進計劃】 -->
+    <section id="about" class="py-20 bg-accent">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-black text-primary relative inline-block">
+                    關於回憶促進計劃
+                    <span class="absolute bottom-0 left-0 w-full h-1.5 bg-secondary transform translate-y-3"></span>
+                </h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-3xl font-bold mb-6 text-primary">為什麼是【回憶促進】？</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-6 font-medium">
+                        台灣已邁入超高齡社會，獨居與社會孤立風險同步上升。我們發現初老夥伴往往不願進入傳統機構，而社區據點也面臨如何發展特色以吸引長輩持續參與的挑戰。
+                    </p>
+                    <div class="bg-white border-l-8 border-secondary p-6 mb-8 shadow-md rounded-r-xl">
+                        <p class="text-gray-800 font-bold text-lg">
+                            <i class="fa-solid fa-brain text-secondary mr-2 text-2xl align-middle"></i>
+                            科學實證：
+                        </p>
+                        <p class="text-gray-700 mt-2">
+                            研究發現，長者進行回憶對談時，大腦前額葉皮質血流量高於一般日常對話，流入腦中血液量<strong class="text-secondary text-xl mx-1">增加高達80倍</strong>！這可大幅協助長者增加互動、提升情緒與認知刺激。
+                        </p>
+                    </div>
+                    <ul class="space-y-4 text-gray-800 font-bold text-lg">
+                        <li class="flex items-start"><i class="fa-solid fa-circle-check text-secondary mt-1 mr-3"></i> <span>長者角色轉換：從被照顧者，轉變為照顧者。</span></li>
+                        <li class="flex items-start"><i class="fa-solid fa-circle-check text-secondary mt-1 mr-3"></i> <span>專長挖掘：識別長者的生命經驗和能力。</span></li>
+                        <li class="flex items-start"><i class="fa-solid fa-circle-check text-secondary mt-1 mr-3"></i> <span>建立安全情境：打造友善的長者參與互動環境。</span></li>
+                    </ul>
+                </div>
+                <!-- 介紹影片 -->
+                <div class="video-container border-4 border-white shadow-xl">
+                    <iframe src="https://www.youtube.com/embed/npuJ8o1JdyQ" title="回憶促進計劃介紹" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 【服務對象】 -->
+    <section id="target" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-black text-primary relative inline-block">
+                    服務對象 × 場域 × 夥伴
+                    <span class="absolute bottom-0 left-0 w-full h-1.5 bg-secondary transform translate-y-3"></span>
+                </h2>
+                <p class="mt-8 text-xl text-gray-600 font-bold">一次串起，建立永續的社區照護生態系</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-accent rounded-2xl p-8 text-center border-b-4 border-primary hover:border-secondary transition duration-300 transform hover:-translate-y-2 shadow-md">
+                    <div class="w-24 h-24 mx-auto bg-primary text-white rounded-full flex items-center justify-center text-4xl mb-6 shadow-inner">
+                        <i class="fa-solid fa-house-chimney-medical"></i>
+                    </div>
+                    <h3 class="text-2xl font-black mb-3 text-primary">據點</h3>
+                    <p class="text-gray-700 font-medium">發展社區照護<br>據點的亮點與特色</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-accent rounded-2xl p-8 text-center border-b-4 border-primary hover:border-secondary transition duration-300 transform hover:-translate-y-2 shadow-md">
+                    <div class="w-24 h-24 mx-auto bg-primary text-white rounded-full flex items-center justify-center text-4xl mb-6 shadow-inner">
+                        <i class="fa-solid fa-person-cane"></i>
+                    </div>
+                    <h3 class="text-2xl font-black mb-3 text-primary">長輩</h3>
+                    <p class="text-gray-700 font-medium">促進身心健康<br>重拾生命價值感</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-accent rounded-2xl p-8 text-center border-b-4 border-primary hover:border-secondary transition duration-300 transform hover:-translate-y-2 shadow-md">
+                    <div class="w-24 h-24 mx-auto bg-primary text-white rounded-full flex items-center justify-center text-4xl mb-6 shadow-inner">
+                        <i class="fa-solid fa-hands-holding-child"></i>
+                    </div>
+                    <h3 class="text-2xl font-black mb-3 text-primary">初老夥伴</h3>
+                    <p class="text-gray-700 font-medium">發揮社會新力量<br>創造有酬志工機會</p>
+                </div>
+                <!-- Card 4 -->
+                <div class="bg-accent rounded-2xl p-8 text-center border-b-4 border-primary hover:border-secondary transition duration-300 transform hover:-translate-y-2 shadow-md">
+                    <div class="w-24 h-24 mx-auto bg-primary text-white rounded-full flex items-center justify-center text-4xl mb-6 shadow-inner">
+                        <i class="fa-solid fa-city"></i>
+                    </div>
+                    <h3 class="text-2xl font-black mb-3 text-primary">社區</h3>
+                    <p class="text-gray-700 font-medium">提高長輩黏著度<br>促進世代和諧共融</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 【友善團隊】 -->
+    <section id="team" class="py-20 bg-primary text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-black relative inline-block text-white">
+                    專業友善團隊
+                    <span class="absolute bottom-0 left-0 w-full h-1.5 bg-secondary transform translate-y-3"></span>
+                </h2>
+                <p class="mt-8 text-lg text-gray-300 max-w-4xl mx-auto font-medium">
+                    星展銀行基金會協助新加坡社會科學大學 (SUSS) 、臺北醫學大學 (TMU) 及香港嶺南大學(LU)設立了「區域回憶促進資源中心 (RH)」，提供教育訓練、經費與資源補助、國際共構與永續發展的支持。
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- 團隊成員 1 -->
+                <div class="bg-white text-gray-800 rounded-2xl overflow-hidden shadow-xl border-t-8 border-secondary transform transition hover:scale-105">
+                    <div class="p-8">
+                        <div class="text-primary text-6xl mb-6 text-center"><i class="fa-solid fa-user-doctor"></i></div>
+                        <h3 class="text-2xl font-black text-center text-primary mb-1">馬學嘉 博士</h3>
+                        <p class="text-center text-sm font-bold text-secondary mb-4">新加坡社會科學大學 老年學課程負責人</p>
+                        <p class="text-gray-600 font-medium leading-relaxed text-justify">
+                            體驗式學習中心的高級研究員，領導老年學課程、社區參與和研究工作，重點關注老年人學習指南、失智症回憶、口述歷史計畫、數位共融、健康老化以及世界衛生組織 ICOPE 框架。
+                        </p>
+                    </div>
+                </div>
+                <!-- 團隊成員 2 -->
+                <div class="bg-white text-gray-800 rounded-2xl overflow-hidden shadow-xl border-t-8 border-secondary transform transition hover:scale-105">
+                    <div class="p-8">
+                        <div class="text-primary text-6xl mb-6 text-center"><i class="fa-solid fa-user-graduate"></i></div>
+                        <h3 class="text-2xl font-black text-center text-primary mb-1">邱佳慧 博士</h3>
+                        <p class="text-center text-sm font-bold text-secondary mb-4">臺北醫學大學 副教授</p>
+                        <p class="text-gray-600 font-medium leading-relaxed text-justify">
+                            擁有十餘年長者社區中心管理經驗。率先將設計思考和口述歷史應用於長者照顧與服務學習領域，於2015年創立台灣首個由大學主導的社區活動中心，專長於創新教學與研究。
+                        </p>
+                    </div>
+                </div>
+                <!-- 團隊成員 3 -->
+                <div class="bg-white text-gray-800 rounded-2xl overflow-hidden shadow-xl border-t-8 border-secondary transform transition hover:scale-105">
+                    <div class="p-8">
+                        <div class="text-primary text-6xl mb-6 text-center"><i class="fa-solid fa-user-tie"></i></div>
+                        <h3 class="text-2xl font-black text-center text-primary mb-1">王明旭 博士</h3>
+                        <p class="text-center text-sm font-bold text-secondary mb-4">臺北醫學大學跨領域學院 副院長</p>
+                        <p class="text-gray-600 font-medium leading-relaxed text-justify">
+                            生醫設計師和特殊教育教師，致力於透過服務設計促進社會融合。擁有超過8年的長者中心管理經驗與多項針對社會議題的產品專利，專長於教學設計與跨領域教學。
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 合作夥伴 Logos 示意 -->
+            <div class="mt-16 pt-10 border-t border-blue-800 flex flex-wrap justify-center items-center gap-8 text-gray-400">
+                <div class="text-2xl font-black">星展銀行基金會</div>
+                <div class="text-2xl font-black">新加坡社科大學</div>
+                <div class="text-2xl font-black">台灣臺北醫學大學</div>
+                <div class="text-2xl font-black">香港嶺南大學</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 【重要里程碑】 -->
+    <section id="milestones" class="py-20 bg-accent overflow-hidden">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-black text-primary relative inline-block">
+                    重要里程碑
+                    <span class="absolute bottom-0 left-0 w-full h-1.5 bg-secondary transform translate-y-3"></span>
+                </h2>
+            </div>
+
+            <div class="relative">
+                <!-- Timeline base line -->
+                <div class="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 h-full w-1 bg-primary/20"></div>
+
+                <!-- 2025 Year Block -->
+                <div class="mb-12 relative z-10">
+                    <div class="flex items-center justify-start md:justify-center mb-8">
+                        <div class="bg-primary text-white font-black text-2xl py-2 px-8 rounded-full shadow-lg border-4 border-white">2025年</div>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <!-- 2025 Items -->
+                        <div class="relative pl-8 md:pl-0 md:w-1/2 md:pr-12 md:ml-0 md:text-right">
+                            <div class="absolute left-[-5px] md:left-auto md:right-[-5px] top-1.5 w-3 h-3 bg-secondary rounded-full border-2 border-white shadow-[0_0_0_3px_#002060]"></div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-secondary md:border-l-0 md:border-r-4">
+                                <span class="text-secondary font-black mr-2">3/29</span> 回憶元素蒐集工作坊：與學生及長者共同共創回憶元素
+                            </div>
+                        </div>
+                        <div class="relative pl-8 md:pl-0 md:w-1/2 md:pl-12 md:ml-auto">
+                            <div class="absolute left-[-5px] top-1.5 w-3 h-3 bg-secondary rounded-full border-2 border-white shadow-[0_0_0_3px_#002060]"></div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-primary">
+                                <span class="text-primary font-black mr-2">3/30</span> 回憶 VR 設計工作坊：與在地 VR 團隊及學生協作,設計臺灣在地化 VR 內容
+                            </div>
+                        </div>
+                        <div class="relative pl-8 md:pl-0 md:w-1/2 md:pr-12 md:ml-0 md:text-right">
+                            <div class="absolute left-[-5px] md:left-auto md:right-[-5px] top-1.5 w-3 h-3 bg-secondary rounded-full border-2 border-white shadow-[0_0_0_3px_#002060]"></div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-secondary md:border-l-0 md:border-r-4">
+                                <span class="text-secondary font-black mr-2">4/23</span> 回憶促進公開推廣活動：內湖攤位宣傳
+                            </div>
+                        </div>
+                        <div class="relative pl-8 md:pl-0 md:w-1/2 md:pl-12 md:ml-auto">
+                            <div class="absolute left-[-5px] top-1.5 w-3 h-3 bg-secondary rounded-full border-2 border-white shadow-[0_0_0_3px_#002060]"></div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-primary">
+                                <span class="text-primary font-black mr-2">5/6</span> 拜會臺北市政府社會局
+                            </div>
+                        </div>
+                        <div class="relative pl-8 md:pl-0 md:w-1/2 md:pr-12 md:ml-0 md:text-right">
+                            <div class="absolute left-[-5px] md:left-auto md:right-[-5px] top-1.5 w-3 h-3 bg-secondary rounded-full border-2 border-white shadow-[0_0_0_3px_#002060]"></div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-secondary md:border-l-0 md:border-r-4">
+                                <span class="text-secondary font-black mr-2">5/21-5/22</span> 設計思考原型製作工作坊＠新加坡社會科學大學 SUSS
+                            </div>
+                        </div>
+                        <div class="relative pl-8 md:pl-0 md:w-1/2 md:pl-12 md:ml-auto">
+                            <div class="absolute left-[-5px] top-1.5 w-3 h-3 bg-secondary rounded-full border-2 border-white shadow-[0_0_0_3px_#002060]"></div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-primary">
+                                <span class="text-primary font-black mr-2">5/28</span> 與合作機構諮詢討論
+                            </div>
+                        </div>
+                        <div class="relative pl-8 md:pl-0 md:w-1/2 md:pr-12 md:ml-0 md:text-right">
+                            <div class="absolute left-[-5px] md:left-auto md:right-[-5px] top-1.5 w-3 h-3 bg-secondary rounded-full border-2 border-white shadow-[0_0_0_3px_#002060]"></div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-secondary md:border-l-0 md:border-r-4">
+                                <span class="text-secondary font-black mr-2">6/3</span> 與新北市政府衛生局線上邀請說明會
+                            </div>
+                        </div>
+                        <div class="relative pl-8 md:pl-0 md:w-1/2 md:pl-12 md:ml-auto">
+                            <div class="absolute left-[-5px] top-1.5 w-3 h-3 bg-secondary rounded-full border-2 border-white shadow-[0_0_0_3px_#002060]"></div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-primary">
+                                <span class="text-primary font-black mr-2">6/13、6/17</span> 志工招募線上說明會
+                            </div>
+                        </div>
+                        <div class="relative pl-8 md:pl-0 md:w-1/2 md:pr-12 md:ml-0 md:text-right">
+                            <div class="absolute left-[-5px] md:left-auto md:right-[-5px] top-1.5 w-3 h-3 bg-secondary rounded-full border-2 border-white shadow-[0_0_0_3px_#002060]"></div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-secondary md:border-l-0 md:border-r-4">
+                                <span class="text-secondary font-black mr-2">6/28</span> 與哈佛 d.school 教師 Bre 進行原型測試工作坊
+                            </div>
+                        </div>
+                        <div class="relative pl-8 md:pl-0 md:w-1/2 md:pl-12 md:ml-auto">
+                            <div class="absolute left-[-5px] top-1.5 w-3 h-3 bg-secondary rounded-full border-2 border-white shadow-[0_0_0_3px_#002060]"></div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-primary">
+                                <span class="text-primary font-black mr-2">8/4-8/5</span> 第一輪兩天實體培訓工作坊＠SUSS
+                            </div>
+                        </div>
+                        <div class="relative pl-8 md:pl-0 md:w-1/2 md:pr-12 md:ml-0 md:text-right">
+                            <div class="absolute left-[-5px] md:left-auto md:right-[-5px] top-1.5 w-3 h-3 bg-secondary rounded-full border-2 border-white shadow-[0_0_0_3px_#002060]"></div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-secondary md:border-l-0 md:border-r-4">
+                                <span class="text-secondary font-black mr-2">8/14</span> 原型牌卡工具包試辦體驗場
+                            </div>
+                        </div>
+                        <div class="relative pl-8 md:pl-0 md:w-1/2 md:pl-12 md:ml-auto">
+                            <div class="absolute left-[-5px] top-1.5 w-3 h-3 bg-secondary rounded-full border-2 border-white shadow-[0_0_0_3px_#002060]"></div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-primary">
+                                <span class="text-primary font-black block md:inline mr-2">8/29、9/2、9/12</span> 線上課程說明會／課程導覽
+                            </div>
+                        </div>
+                        <div class="relative pl-8 md:pl-0 md:w-1/2 md:pr-12 md:ml-0 md:text-right">
+                            <div class="absolute left-[-5px] md:left-auto md:right-[-5px] top-1.5 w-3 h-3 bg-secondary rounded-full border-2 border-white shadow-[0_0_0_3px_#002060]"></div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-secondary md:border-l-0 md:border-r-4">
+                                <span class="text-secondary font-black mr-2">9/5</span> 北醫團隊取得 IRB 倫理審查核准
+                            </div>
+                        </div>
+                        <div class="relative pl-8 md:pl-0 md:w-1/2 md:pl-12 md:ml-auto">
+                            <div class="absolute left-[-5px] top-1.5 w-3 h-3 bg-secondary rounded-full border-2 border-white shadow-[0_0_0_3px_#002060]"></div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-primary">
+                                <span class="text-primary font-black mr-2">9/15</span> 啟動回憶促進引導員(RF)培訓前問卷調查
+                            </div>
+                        </div>
+                        <div class="relative pl-8 md:pl-0 md:w-1/2 md:pr-12 md:ml-0 md:text-right">
+                            <div class="absolute left-[-5px] md:left-auto md:right-[-5px] top-1.5 w-3 h-3 bg-secondary rounded-full border-2 border-white shadow-[0_0_0_3px_#002060]"></div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-secondary md:border-l-0 md:border-r-4">
+                                <span class="text-secondary font-black mr-2">9/27-9/28</span> 第一輪兩天實體培訓工作坊＠TMU
+                            </div>
+                        </div>
+                        <div class="relative pl-8 md:pl-0 md:w-1/2 md:pl-12 md:ml-auto">
+                            <div class="absolute left-[-5px] top-1.5 w-3 h-3 bg-secondary rounded-full border-2 border-white shadow-[0_0_0_3px_#002060]"></div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-primary">
+                                <span class="text-primary font-black mr-2">10/2</span> 回憶促進計劃專案開幕＠SUSS
+                            </div>
+                        </div>
+                        <div class="relative pl-8 md:pl-0 md:w-1/2 md:pr-12 md:ml-0 md:text-right">
+                            <div class="absolute left-[-5px] md:left-auto md:right-[-5px] top-1.5 w-3 h-3 bg-secondary rounded-full border-2 border-white shadow-[0_0_0_3px_#002060]"></div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-secondary md:border-l-0 md:border-r-4">
+                                <span class="text-secondary font-black mr-2">10/8</span> VR回憶促進引導說明會
+                            </div>
+                        </div>
+                        <div class="relative pl-8 md:pl-0 md:w-1/2 md:pl-12 md:ml-auto">
+                            <div class="absolute left-[-5px] top-1.5 w-3 h-3 bg-secondary rounded-full border-2 border-white shadow-[0_0_0_3px_#002060]"></div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-primary">
+                                <span class="text-primary font-black mr-2">10/20</span> VR回憶促進引導第一次服務啟動
+                            </div>
+                        </div>
+                        <div class="relative pl-8 md:pl-0 md:w-1/2 md:pr-12 md:ml-0 md:text-right">
+                            <div class="absolute left-[-5px] md:left-auto md:right-[-5px] top-1.5 w-3 h-3 bg-secondary rounded-full border-2 border-white shadow-[0_0_0_3px_#002060]"></div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-secondary md:border-l-0 md:border-r-4">
+                                <span class="text-secondary font-black mr-2">10/29</span> 回憶促進引導員(RF)「1對4」、「1對多」第1門實習課程啟動
+                            </div>
+                        </div>
+                        <div class="relative pl-8 md:pl-0 md:w-1/2 md:pl-12 md:ml-auto">
+                            <div class="absolute left-[-5px] top-1.5 w-3 h-3 bg-secondary rounded-full border-2 border-white shadow-[0_0_0_3px_#002060]"></div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-primary">
+                                <span class="text-primary font-black mr-2">11/14</span> 回憶促進引導員(RF)「1對1（獨老長輩）」第1門實習課程啟動
+                            </div>
+                        </div>
+                        <div class="relative pl-8 md:pl-0 md:w-1/2 md:pr-12 md:ml-0 md:text-right">
+                            <div class="absolute left-[-5px] md:left-auto md:right-[-5px] top-1.5 w-3 h-3 bg-secondary rounded-full border-2 border-white shadow-[0_0_0_3px_#002060]"></div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-secondary md:border-l-0 md:border-r-4">
+                                <span class="text-secondary font-black mr-2">11/22-11/23</span> 醫學設計思考工作坊：北醫學生發揮創意設計懷舊桌遊
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2026 Year Block -->
+                <div class="relative z-10 pt-8">
+                    <div class="flex items-center justify-start md:justify-center mb-8">
+                        <div class="bg-secondary text-white font-black text-2xl py-2 px-8 rounded-full shadow-lg border-4 border-white">2026年</div>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <!-- 2026 Items -->
+                        <div class="relative pl-8 md:pl-0 md:w-1/2 md:pl-12 md:ml-auto">
+                            <div class="absolute left-[-5px] top-1.5 w-3 h-3 bg-primary rounded-full border-2 border-white shadow-[0_0_0_3px_#E31837]"></div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-primary">
+                                <span class="text-primary font-black mr-2">1/8-1/14</span> 第二輪兩天半實體培訓工作坊＠SUSS
+                            </div>
+                        </div>
+                        <div class="relative pl-8 md:pl-0 md:w-1/2 md:pr-12 md:ml-0 md:text-right">
+                            <div class="absolute left-[-5px] md:left-auto md:right-[-5px] top-1.5 w-3 h-3 bg-primary rounded-full border-2 border-white shadow-[0_0_0_3px_#E31837]"></div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-secondary md:border-l-0 md:border-r-4">
+                                <span class="text-secondary font-black mr-2">1/16</span> VR回憶促進引導員第12次服務率先結束
+                            </div>
+                        </div>
+                        <div class="relative pl-8 md:pl-0 md:w-1/2 md:pl-12 md:ml-auto">
+                            <div class="absolute left-[-5px] top-1.5 w-3 h-3 bg-primary rounded-full border-2 border-white shadow-[0_0_0_3px_#E31837]"></div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-primary">
+                                <span class="text-primary font-black mr-2">1/21</span> 回憶促進引導員(RF) 第12門實習率先結束
+                            </div>
+                        </div>
+                        <div class="relative pl-8 md:pl-0 md:w-1/2 md:pr-12 md:ml-0 md:text-right">
+                            <div class="absolute left-[-5px] md:left-auto md:right-[-5px] top-1.5 w-3 h-3 bg-primary rounded-full border-2 border-white shadow-[0_0_0_3px_#E31837]"></div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-secondary md:border-l-0 md:border-r-4">
+                                <span class="text-secondary font-black mr-2">5月</span> 第二輪回憶促進引導員培訓報名開始
+                            </div>
+                        </div>
+                        <div class="relative pl-8 md:pl-0 md:w-1/2 md:pl-12 md:ml-auto">
+                            <div class="absolute left-[-5px] top-1.5 w-3 h-3 bg-primary rounded-full border-2 border-white shadow-[0_0_0_3px_#E31837]"></div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-primary">
+                                <span class="text-primary font-black mr-2">6月</span> 第二輪回憶促進引導員兩天線上、實體培訓工作坊
+                            </div>
+                        </div>
+                        <div class="relative pl-8 md:pl-0 md:w-1/2 md:pr-12 md:ml-0 md:text-right">
+                            <div class="absolute left-[-5px] md:left-auto md:right-[-5px] top-1.5 w-3 h-3 bg-primary rounded-full border-2 border-white shadow-[0_0_0_3px_#E31837]"></div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-secondary md:border-l-0 md:border-r-4">
+                                <span class="text-secondary font-black mr-2">7月</span> 第二輪回憶促進引導VR、RF服務啟動
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 【專業培訓】 -->
+    <section id="training" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-black text-primary relative inline-block">
+                    回憶引導員 專業培訓旅程
+                    <span class="absolute bottom-0 left-0 w-full h-1.5 bg-secondary transform translate-y-3"></span>
+                </h2>
+                <p class="mt-8 text-lg text-gray-600 font-bold">完整的培訓機制，招募、培訓、推廣一站式模組架構</p>
+            </div>
+
+            <!-- 插入培訓流程圖片 -->
+            <div class="mb-16">
+                <img src="回憶促進引導員培訓流程.png" alt="回憶促進引導員培訓流程" class="w-full max-w-5xl mx-auto rounded-xl shadow-xl border-4 border-primary">
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+                <!-- 培訓影片 -->
+                <div class="video-container order-2 lg:order-1 border-4 border-primary shadow-xl">
+                    <iframe src="https://www.youtube.com/embed/yEwltQEuoVo" title="回憶促進計劃 專業培訓" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                
+                <!-- 培訓步驟 -->
+                <div class="order-1 lg:order-2 space-y-8">
+                    <div class="flex">
+                        <div class="flex-shrink-0 mr-4">
+                            <div class="w-14 h-14 rounded-full bg-primary text-white flex items-center justify-center font-black text-2xl shadow-md border-2 border-secondary">1</div>
+                        </div>
+                        <div>
+                            <h4 class="text-2xl font-black text-primary mb-2">線上課程</h4>
+                            <p class="text-gray-700 font-medium">完成必要的線上課程以建立回憶引導的基礎知識，涵蓋引導原則、5大核心素養與能力 (5 RECs) 及 4Ws 活動設計方法。</p>
+                        </div>
+                    </div>
+                    <div class="flex">
+                        <div class="flex-shrink-0 mr-4">
+                            <div class="w-14 h-14 rounded-full bg-primary text-white flex items-center justify-center font-black text-2xl shadow-md border-2 border-secondary">2</div>
+                        </div>
+                        <div>
+                            <h4 class="text-2xl font-black text-primary mb-2">實體培訓</h4>
+                            <p class="text-gray-700 font-medium">參加為期兩天的實體培訓課程，透過角色扮演與模擬情境，獲得實踐經驗與有效溝通技巧。</p>
+                        </div>
+                    </div>
+                    <div class="flex">
+                        <div class="flex-shrink-0 mr-4">
+                            <div class="w-14 h-14 rounded-full bg-primary text-white flex items-center justify-center font-black text-2xl shadow-md border-2 border-secondary">3</div>
+                        </div>
+                        <div>
+                            <h4 class="text-2xl font-black text-primary mb-2">實作與微型工作</h4>
+                            <p class="text-gray-700 font-medium text-lg leading-relaxed bg-accent p-4 border-l-4 border-secondary rounded-r-lg">
+                                完成 12 次實作以應用所學技能，成功完成所有步驟後即可獲得「回憶引導員證照」!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 【活動成果】 -->
+    <section id="results" class="py-20 bg-accent border-t-4 border-primary">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-black text-primary relative inline-block">
+                    活動成果：看見改變
+                    <span class="absolute bottom-0 left-0 w-full h-1.5 bg-secondary transform translate-y-3"></span>
+                </h2>
+                <p class="mt-8 text-xl text-gray-600 max-w-2xl mx-auto font-bold">
+                    讓長輩被理解，讓社區更有溫度，讓我們老的起。
+                </p>
+            </div>
+
+            <!-- 數據統計 -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16 text-center">
+                <div class="bg-white rounded-2xl p-10 border-t-8 border-primary shadow-lg transform transition hover:-translate-y-2">
+                    <div class="text-5xl md:text-6xl font-black text-primary mb-4">30+</div>
+                    <div class="text-xl font-black text-gray-800">培訓志工投入</div>
+                </div>
+                <div class="bg-white rounded-2xl p-10 border-t-8 border-secondary shadow-lg transform transition hover:-translate-y-2">
+                    <div class="text-5xl md:text-6xl font-black text-secondary mb-4">120+</div>
+                    <div class="text-xl font-black text-gray-800">受惠長輩</div>
+                </div>
+                <div class="bg-white rounded-2xl p-10 border-t-8 border-primary shadow-lg transform transition hover:-translate-y-2">
+                    <div class="text-5xl md:text-6xl font-black text-primary mb-4">13+</div>
+                    <div class="text-xl font-black text-gray-800">合作機構與據點</div>
+                </div>
+            </div>
+
+            <div class="text-center bg-primary text-white rounded-2xl p-12 shadow-2xl relative overflow-hidden">
+                <div class="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-secondary rounded-full opacity-30 blur-2xl"></div>
+                <h3 class="text-3xl font-black mb-6 relative z-10">探索我們豐富的活動紀錄</h3>
+                <p class="text-gray-300 mb-10 max-w-3xl mx-auto font-medium text-lg relative z-10">
+                    從回憶元素蒐集工作坊、VR設計工作坊，到設計思考原型製作與實體培訓課程，我們記錄下了每一次感動的瞬間。歡迎觀看我們的成果影片播放清單！
+                </p>
+                <a href="https://youtube.com/playlist?list=PLdDQjHy8AZ1WP-O-X97GiwDM8nx_nIVLy&si=GQhnDNBCQmUyqCMf" target="_blank" rel="noopener noreferrer" class="relative z-10 inline-flex items-center gap-4 bg-secondary hover:bg-red-700 text-white font-black py-4 px-10 rounded-full shadow-xl transition transform hover:scale-105 text-lg border-2 border-secondary hover:border-white">
+                    <i class="fa-brands fa-youtube text-3xl"></i>
+                    <span>觀看活動成果播放清單</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 【聯絡我們】 -->
+    <section id="contact" class="py-24 bg-primary text-white border-t-8 border-secondary">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <!-- 聯絡資訊 -->
+                <div>
+                    <h2 class="text-4xl font-black mb-8 border-l-8 border-secondary pl-4">聯絡我們</h2>
+                    <p class="text-gray-300 mb-10 text-lg font-medium leading-relaxed">
+                        期待把回憶促進變成社區的日常支持：更多據點、更多引導員、更多長輩受益。若您對計劃有興趣，或想成為我們的合作夥伴，歡迎隨時與我們聯繫！
+                    </p>
+                    
+                    <div class="bg-white text-primary p-8 rounded-2xl shadow-2xl relative">
+                        <div class="absolute top-0 right-0 w-24 h-24 bg-secondary rounded-bl-full opacity-10"></div>
+                        
+                        <div class="space-y-4 font-medium text-lg text-gray-800">
+                            <p class="font-black text-xl text-primary"><i class="fa-solid fa-user text-secondary w-6 text-center mr-2"></i>李家豪 <span class="text-gray-500 font-bold ml-1 mr-2">Frank</span> <span class="text-base text-gray-600 border-l-2 border-gray-300 pl-2">專案經理</span></p>
+                            <p><i class="fa-solid fa-phone text-secondary w-6 text-center mr-2"></i>聯絡電話：(02)2736-1661 分機2663</p>
+                            <p><i class="fa-solid fa-mobile-screen-button text-secondary w-6 text-center mr-2"></i>聯絡手機：0912-479-564</p>
+                            <p><i class="fa-solid fa-envelope text-secondary w-6 text-center mr-2"></i>Mail：<a href="mailto:s07295@tmu.edu.tw" class="text-blue-600 hover:underline">s07295@tmu.edu.tw</a></p>
+                            <p><i class="fa-brands fa-line text-green-500 w-6 text-center mr-2"></i>LINE ID：lichiahao.frank</p>
+                            <p><i class="fa-brands fa-whatsapp text-green-600 w-6 text-center mr-2"></i>WhatsApp：<a href="https://wa.me/886912479564" target="_blank" class="text-blue-600 hover:underline break-all">https://wa.me/886912479564</a></p>
+                        </div>
+
+                        <!-- 社群連結按鈕 -->
+                        <div class="mt-8 flex flex-wrap gap-4">
+                            <a href="https://www.facebook.com/tmuaac" target="_blank" class="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-lg font-bold transition shadow-md">
+                                <i class="fa-brands fa-facebook-f text-xl"></i> 信義展齡中心
+                            </a>
+                            <a href="https://youtube.com/@tmu_rf?si=WEgDq_W4qwDvZmhZ" target="_blank" class="flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white px-5 py-2.5 rounded-lg font-bold transition shadow-md">
+                                <i class="fa-brands fa-youtube text-xl"></i> YT頻道
+                            </a>
+                            <a href="https://miro.com/app/board/uXjVJMn_OgE=/?share_link_id=161391514107" target="_blank" class="flex items-center gap-2 bg-[#FFD02F] hover:bg-[#e5bb2a] text-gray-900 px-5 py-2.5 rounded-lg font-bold transition shadow-md">
+                                <i class="fa-solid fa-chalkboard text-xl"></i> Miro線上策展
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- QR Codes 區塊 -->
+                <div class="flex flex-col justify-center space-y-8">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                        <!-- LINE QR Code -->
+                        <div class="bg-accent p-6 rounded-2xl text-center border-b-4 border-secondary shadow-xl transform transition hover:scale-105">
+                            <div class="bg-white p-3 rounded-xl shadow-inner inline-block">
+                                <img src="FrankLINEQRCode.jpeg" alt="李家豪LINE QR Code" class="w-40 h-40 object-cover rounded-lg border border-gray-200">
+                            </div>
+                            <p class="text-gray-600 mt-4 font-bold text-sm">掃描加 LINE 專人服務</p>
+                        </div>
+
+                        <!-- 表單 QR Code -->
+                        <div class="bg-accent p-6 rounded-2xl text-center border-b-4 border-primary shadow-xl transform transition hover:scale-105">
+                            <div class="bg-white p-3 rounded-xl shadow-inner inline-block">
+                                <img src="JoinUSQRcode.png" alt="加入專案表單QR Code" class="w-40 h-40 object-cover rounded-lg border border-gray-200">
+                            </div>
+                            <p class="text-gray-600 mt-4 font-bold text-sm">掃描填寫合作意願</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#0b162c] py-10 border-t border-[#1a2f5a]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-400 font-medium">
+            <p>&copy; 2026 回憶促進計劃 (Reminiscence Promotion Project). All rights reserved.</p>
+            <p class="mt-3 text-sm tracking-widest text-gray-500">協辦單位：星展銀行基金會 | 新加坡社科大學 | 台灣臺北醫學大學 | 香港嶺南大學</p>
+        </div>
+    </footer>
+
+    <!-- 手機版選單切換腳本 -->
+    <script>
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            var menu = document.getElementById('mobile-menu');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+            } else {
+                menu.classList.add('hidden');
+            }
+        });
+
+        const mobileLinks = document.querySelectorAll('#mobile-menu a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html><!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>回憶促進計劃 | 成為可以一起變老的朋友</title>
+    <meta name="description" content="回憶促進計劃結合臺北醫學大學與SUSS，透過回憶引導增加長者互動、提升情緒與認知，打造青銀共融的社區新力量。">
+    <meta name="keywords" content="回憶促進計劃, 長者照護, 臺北醫學大學, 信義展齡中心, SUSS, 嶺南大學, 星展銀行, 青銀共融, 社區據點">
     
     <!-- 引入 Google Fonts: Noto Sans TC 增加質感 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
