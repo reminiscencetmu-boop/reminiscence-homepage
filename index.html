@@ -66,13 +66,13 @@
             border: 3px solid #fff;
             box-shadow: 0 0 0 3px #002060; /* primary blue */
         }
-        .timeline-line {
-            position: absolute;
-            left: 0;
-            top: 1rem;
-            bottom: -1rem;
-            width: 0.2rem;
-            background-color: #002060; /* primary blue */
+        /* 隱藏滾動條但保留滾動功能 (輪播圖使用) */
+        .hide-scroll-bar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .hide-scroll-bar::-webkit-scrollbar {
+            display: none;
         }
     </style>
 </head>
@@ -94,6 +94,7 @@
                     <a href="#milestones" class="text-primary hover:text-secondary font-bold transition">重要里程碑</a>
                     <a href="#training" class="text-primary hover:text-secondary font-bold transition">專業培訓</a>
                     <a href="#results" class="text-primary hover:text-secondary font-bold transition">活動成果</a>
+                    <a href="#gallery" class="text-primary hover:text-secondary font-bold transition">活動精華</a>
                     <a href="#contact" class="bg-secondary text-white px-6 py-2 rounded-full font-bold hover:bg-red-700 transition shadow-md">聯絡我們</a>
                 </div>
                 <div class="md:hidden flex items-center">
@@ -111,6 +112,7 @@
                 <a href="#milestones" class="block px-3 py-3 text-white hover:text-secondary font-bold">重要里程碑</a>
                 <a href="#training" class="block px-3 py-3 text-white hover:text-secondary font-bold">專業培訓</a>
                 <a href="#results" class="block px-3 py-3 text-white hover:text-secondary font-bold">活動成果</a>
+                <a href="#gallery" class="block px-3 py-3 text-white hover:text-secondary font-bold">活動精華</a>
                 <a href="#contact" class="block px-3 py-3 text-secondary font-bold bg-white mx-4 rounded-md">聯絡我們</a>
             </div>
         </div>
@@ -126,7 +128,7 @@
             </h1>
             <p class="text-xl md:text-2xl text-gray-200 mb-10 max-w-3xl mx-auto font-medium">
                 讓長輩不只是被照顧者，也可以是照顧者。<br class="hidden md:block">
-                透過回憶促進與懷舊，我們連結當下，提升心理生活，建立青銀共融的友善社區。
+                透過懷舊與回憶促進，我們連結當下，提升心理生活，建立青銀共融的友善社區。
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
                 <a href="#about" class="bg-secondary hover:bg-red-700 text-white font-bold py-4 px-10 rounded-full shadow-lg transition transform hover:-translate-y-1 text-lg">了解更多</a>
@@ -139,13 +141,13 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-black text-primary relative inline-block">
-                    關於【回憶促進】計劃
+                    關於回憶促進計劃
                     <span class="absolute bottom-0 left-0 w-full h-1.5 bg-secondary transform translate-y-3"></span>
                 </h2>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div>
-                    <h3 class="text-3xl font-bold mb-6 text-primary">為什麼是【回憶促進】？</h3>
+                    <h3 class="text-3xl font-bold mb-6 text-primary">為什麼是【懷舊與回憶促進】？</h3>
                     <p class="text-lg text-gray-700 leading-relaxed mb-6 font-medium">
                         台灣已邁入超高齡社會，獨居與社會孤立風險同步上升。我們發現初老夥伴往往不願進入傳統機構，而社區據點也面臨如何發展特色，並藉由懷舊活動吸引長輩持續參與的挑戰。
                     </p>
@@ -226,10 +228,12 @@
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div class="bg-white text-gray-800 rounded-2xl overflow-hidden shadow-xl border-t-8 border-secondary transform transition hover:scale-105">
                     <div class="p-8">
-                        <div class="text-primary text-6xl mb-6 text-center"><i class="fa-solid fa-user-doctor"></i></div>
+                        <div class="flex justify-center mb-6">
+                            <img src="dr_ma.jpeg" alt="馬學嘉 博士" class="w-32 h-32 rounded-full object-cover border-4 border-accent shadow-md">
+                        </div>
                         <h3 class="text-2xl font-black text-center text-primary mb-1">馬學嘉 博士</h3>
                         <p class="text-center text-sm font-bold text-secondary mb-4">新加坡社會科學大學 老年學課程負責人</p>
                         <p class="text-gray-600 font-medium leading-relaxed text-justify">
@@ -239,7 +243,9 @@
                 </div>
                 <div class="bg-white text-gray-800 rounded-2xl overflow-hidden shadow-xl border-t-8 border-secondary transform transition hover:scale-105">
                     <div class="p-8">
-                        <div class="text-primary text-6xl mb-6 text-center"><i class="fa-solid fa-user-graduate"></i></div>
+                        <div class="flex justify-center mb-6">
+                            <img src="dr_chiu.jpeg" alt="邱佳慧 博士" class="w-32 h-32 rounded-full object-cover border-4 border-accent shadow-md">
+                        </div>
                         <h3 class="text-2xl font-black text-center text-primary mb-1">邱佳慧 博士</h3>
                         <p class="text-center text-sm font-bold text-secondary mb-4">臺北醫學大學 副教授</p>
                         <p class="text-gray-600 font-medium leading-relaxed text-justify">
@@ -249,11 +255,25 @@
                 </div>
                 <div class="bg-white text-gray-800 rounded-2xl overflow-hidden shadow-xl border-t-8 border-secondary transform transition hover:scale-105">
                     <div class="p-8">
-                        <div class="text-primary text-6xl mb-6 text-center"><i class="fa-solid fa-user-tie"></i></div>
+                        <div class="flex justify-center mb-6">
+                            <img src="dr_wang.jpeg" alt="王明旭 博士" class="w-32 h-32 rounded-full object-cover border-4 border-accent shadow-md">
+                        </div>
                         <h3 class="text-2xl font-black text-center text-primary mb-1">王明旭 博士</h3>
                         <p class="text-center text-sm font-bold text-secondary mb-4">臺北醫學大學跨領域學院 副院長</p>
                         <p class="text-gray-600 font-medium leading-relaxed text-justify">
                             生醫設計師和特殊教育教師，致力於透過服務設計促進社會融合。擁有超過8年的長者中心管理經驗與多項針對社會議題的懷舊與照顧產品專利，專長於教學設計與跨領域教學。
+                        </p>
+                    </div>
+                </div>
+                <div class="bg-white text-gray-800 rounded-2xl overflow-hidden shadow-xl border-t-8 border-secondary transform transition hover:scale-105">
+                    <div class="p-8">
+                        <div class="flex justify-center mb-6">
+                            <img src="chloe.jpeg" alt="Chloe 高級講師" class="w-32 h-32 rounded-full object-cover border-4 border-accent shadow-md">
+                        </div>
+                        <h3 class="text-2xl font-black text-center text-primary mb-1">Chloe 高級講師</h3>
+                        <p class="text-center text-sm font-bold text-secondary mb-4">香港嶺南大學 研究生院</p>
+                        <p class="text-gray-600 font-medium leading-relaxed text-justify">
+                            兼任健康分析與管理、智能安老與老年學碩士課程副主任。具備社會學與公共行政背景，專長於樂齡科技、社會老年學及安老政策。擁有逾十年專案管理經驗，深耕社區參與及青銀共融，現兼任屯門健康城市財務秘書。
                         </p>
                     </div>
                 </div>
@@ -559,6 +579,62 @@
         </div>
     </section>
 
+    <section id="gallery" class="py-20 bg-white border-t-4 border-primary">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-black text-primary relative inline-block">
+                    過往活動精華
+                    <span class="absolute bottom-0 left-0 w-full h-1.5 bg-secondary transform translate-y-3"></span>
+                </h2>
+                <p class="mt-8 text-lg text-gray-600 font-bold">每一個珍貴的回憶，都值得被記錄</p>
+            </div>
+
+            <div class="relative group max-w-5xl mx-auto">
+                <!-- 輪播容器 -->
+                <div id="slider" class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-6 hide-scroll-bar smooth-scroll">
+                    <div class="snap-center shrink-0 w-full md:w-2/3 lg:w-3/4">
+                        <img src="gallery1.jpeg" alt="活動精華 1" class="w-full h-64 md:h-96 object-cover rounded-2xl shadow-md border-4 border-accent">
+                    </div>
+                    <div class="snap-center shrink-0 w-full md:w-2/3 lg:w-3/4">
+                        <img src="gallery2.jpeg" alt="活動精華 2" class="w-full h-64 md:h-96 object-cover rounded-2xl shadow-md border-4 border-accent">
+                    </div>
+                    <div class="snap-center shrink-0 w-full md:w-2/3 lg:w-3/4">
+                        <img src="gallery3.jpeg" alt="活動精華 3" class="w-full h-64 md:h-96 object-cover rounded-2xl shadow-md border-4 border-accent">
+                    </div>
+                    <div class="snap-center shrink-0 w-full md:w-2/3 lg:w-3/4">
+                        <img src="gallery4.jpeg" alt="活動精華 4" class="w-full h-64 md:h-96 object-cover rounded-2xl shadow-md border-4 border-accent">
+                    </div>
+                    <div class="snap-center shrink-0 w-full md:w-2/3 lg:w-3/4">
+                        <img src="gallery5.jpeg" alt="活動精華 5" class="w-full h-64 md:h-96 object-cover rounded-2xl shadow-md border-4 border-accent">
+                    </div>
+                    <div class="snap-center shrink-0 w-full md:w-2/3 lg:w-3/4">
+                        <img src="gallery6.jpeg" alt="活動精華 6" class="w-full h-64 md:h-96 object-cover rounded-2xl shadow-md border-4 border-accent">
+                    </div>
+                    <div class="snap-center shrink-0 w-full md:w-2/3 lg:w-3/4">
+                        <img src="gallery7.jpeg" alt="活動精華 7" class="w-full h-64 md:h-96 object-cover rounded-2xl shadow-md border-4 border-accent">
+                    </div>
+                    <div class="snap-center shrink-0 w-full md:w-2/3 lg:w-3/4">
+                        <img src="gallery8.jpeg" alt="活動精華 8" class="w-full h-64 md:h-96 object-cover rounded-2xl shadow-md border-4 border-accent">
+                    </div>
+                    <div class="snap-center shrink-0 w-full md:w-2/3 lg:w-3/4">
+                        <img src="gallery9.jpeg" alt="活動精華 9" class="w-full h-64 md:h-96 object-cover rounded-2xl shadow-md border-4 border-accent">
+                    </div>
+                    <div class="snap-center shrink-0 w-full md:w-2/3 lg:w-3/4">
+                        <img src="gallery10.jpeg" alt="活動精華 10" class="w-full h-64 md:h-96 object-cover rounded-2xl shadow-md border-4 border-accent">
+                    </div>
+                </div>
+
+                <!-- 左右切換按鈕 -->
+                <button id="prevBtn" class="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-2 md:-translate-x-6 bg-white/90 text-primary hover:text-secondary hover:bg-white rounded-full w-12 h-12 flex items-center justify-center shadow-xl border-2 border-gray-200 z-10 transition">
+                    <i class="fa-solid fa-chevron-left text-xl"></i>
+                </button>
+                <button id="nextBtn" class="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-2 md:translate-x-6 bg-white/90 text-primary hover:text-secondary hover:bg-white rounded-full w-12 h-12 flex items-center justify-center shadow-xl border-2 border-gray-200 z-10 transition">
+                    <i class="fa-solid fa-chevron-right text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
     <section id="contact" class="py-24 bg-primary text-white border-t-8 border-secondary">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
@@ -638,6 +714,25 @@
                 document.getElementById('mobile-menu').classList.add('hidden');
             });
         });
+
+        // 照片輪播切換腳本
+        const slider = document.getElementById('slider');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        
+        if(slider && prevBtn && nextBtn) {
+            const getScrollAmount = () => {
+                 const firstChild = slider.querySelector('div');
+                 return firstChild ? firstChild.offsetWidth + 24 : 300; // 24 是 gap-6 的設定寬度
+            };
+
+            prevBtn.addEventListener('click', () => {
+                slider.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+            });
+            nextBtn.addEventListener('click', () => {
+                slider.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+            });
+        }
     </script>
 </body>
 </html>
